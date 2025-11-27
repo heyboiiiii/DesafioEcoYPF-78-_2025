@@ -1,0 +1,7 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "MODULOS")(type "KiCad")(uri "/home/joa/Downloads/YPF/YPF_KICAD_DESIGNS/project_libraries/footprints/MODULOS.pretty")(options "")(descr ""))
+  (lib (name "my_esp32")(type "KiCad")(uri "/home/joa/Downloads/YPF/YPF_KICAD_DESIGNS/project_libraries/footprints/my_esp32.pretty")(options "")(descr ""))
+  (lib (name "LORA")(type "KiCad")(uri "/home/joa/Downloads/YPF/YPF_KICAD_DESIGNS/project_libraries/footprints/LORA.pretty")(options "")(descr ""))
+  (lib (name "GY-NEO6MV2")(type "KiCad")(uri "/home/joa/Downloads/YPF/YPF_KICAD_DESIGNS/project_libraries/footprints/GY-NEO6MV2.pretty")(options "")(descr ""))
+)

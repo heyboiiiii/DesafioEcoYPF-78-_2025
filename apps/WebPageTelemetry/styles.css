@@ -1,0 +1,608 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+*{
+    font-family: Poppins, sans-serif;
+}
+
+:root{
+    /* Colors */
+    --body-color: #e4e9f7;
+    --sidebar-color: #fff;
+    --primary-color: #2110d6;
+    --primary-color-light:#f6f5ff;
+    --toggle-color: #ddd;
+    --text-color:#464646;
+
+    /* Transitions */
+
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+
+
+}
+
+body{
+    height: 100vh;
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+
+body.dark{
+    --body-color: #18191A;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light:#3a3b3c;
+    --toggle-color: #fff;
+    --text-color:#ccc;
+}
+
+/*======Resuable CSS======*/
+
+.sidebar .text{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--tran-02);
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar .image{
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+}
+
+/*======sidebar======*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left:0;
+    height: 100%;
+    width: 250px;
+
+    padding: 10px 10px;
+
+    background: var(--sidebar-color);
+
+    transition: var(--tran-03);
+    z-index: 100;
+}
+
+/* when sidebar is closed*/
+.sidebar.close{
+    width: 40px;
+}
+
+.sidebar.close .text{
+    opacity: 0;
+}
+
+.sidebar.close .search-box input{
+    background: transparent;
+}
+
+
+.sidebar.close .bottom-content .mode{
+    background: transparent;
+}
+
+.sidebar.close .menu-bar .mode .toggle-switch{
+    right: -10px;
+}
+
+
+.sidebar.close header .toggle{
+    transform: translateY(-50%);
+    right: -28px;
+    transition: var(--tran-02);
+}
+
+
+
+
+
+
+/**/
+
+.sidebar li{
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+}
+.sidebar ul{
+    padding: 0;
+}
+
+
+
+/*search box*/
+.sidebar .search-box{
+    background: var(--primary-color-light);
+    transition: var(--tran-03);
+}
+.search-box input{
+    height: 100%;
+    width: 70%;
+    border: none;
+    outline: none;
+    background:var(--primary-color-light);
+    border-radius: 0px;
+
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--primary-color-light);
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+.sidebar li .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    font-size: 20px;
+    transition: var(--tran-03);
+    color: var(--text-color);
+}
+
+.sidebar li .text{
+    color: var(--text-color); 
+    transition: var(--tran-03);
+}
+
+
+
+.sidebar li a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;   
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--tran-03);
+}
+.sidebar li a:hover{
+    background: var(--primary-color);
+}
+
+.sidebar li a:hover .icon{
+    color:var(--sidebar-color);
+}
+.sidebar li a:hover .text{
+    color: var(--sidebar-color);
+}
+
+.sidebar .menu{
+    margin-top: 15px;
+}
+
+.sidebar header{
+    position: relative;
+}
+
+.sidebar .image-text img{
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header .image-text{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}   
+
+header .image-text .header-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.header-text .school{
+    font-weight: 600;
+}
+
+.header-text .challenge{
+    margin-top: -2px;
+
+}
+
+.sidebar header .toggle{
+    position: absolute;
+    top: 50%;
+    right: -2px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 24px;
+    width: 24px;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20%;
+    color: var(--sidebar-color);
+    font-size: 22px;
+}
+
+
+.sidebar .menu-bar{
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.menu-bar .mode{
+    position: relative;
+    background: var(--primary-color-light);
+    border-radius: 6px;
+}
+
+.menu-bar .mode .moon-sun{
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar .mode i{
+    position:absolute; 
+    transition: var(--tran-04);
+
+}
+
+.menu-bar .mode i.sun{
+    opacity: 0;
+}
+
+body.dark .menu-bar .mode i.sun{
+    opacity: 1;
+    
+}
+body.dark .menu-bar .mode i.moon{
+    opacity: 0;
+
+}
+
+body.dark .sidebar header .toggle{
+    color: var(--text-color);
+}
+
+.menu-bar .mode .toggle-switch{
+    height: 100%;
+    min-width: 60px;
+
+    position: absolute;
+    right: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    transition: var(--tran-05);   
+}
+
+
+.toggle-switch .switch{
+    position: relative;
+    height: 22px;
+    width: 40px;
+
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+
+}
+
+.switch::before{
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background:var(--sidebar-color);
+
+    transition: var(--tran-03);
+}
+
+
+body.dark .switch::before{
+    left: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.home{
+    position: relative;
+    height: 100vh;
+    left: 270px;
+    width: calc(100% - 270px);
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+
+
+
+.sidebar.close ~ .home{
+    left: 70px;
+    width: calc(100% - 70px);
+}
+
+.home .text{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Poppins;
+    color: var(--text-color);
+    padding: 8px 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+
+
+.car_number{
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#map{
+
+
+    margin-top: 30px;
+    height: 500px;
+    width: 90%;
+    margin-left: 0px;
+
+    
+}
+
+/*map and car number container*/
+
+
+.home .text header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    
+    width: 400px;
+    height: 100%;
+}
+
+.home .text  header .logo-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.home .text header .image img{
+    width: 35px;
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+
+
+
+/* parameters container */
+.home .text .parameters_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 0px;
+    margin-top: 0px;
+    
+    height: 100%;
+    width: 300px;
+
+}
+
+/*contenedores de cada variable*/
+.text .parameters_box div{
+    background: var(--primary-color-light);
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 55px;
+    padding:0;
+    margin-top: 20px;
+}
+
+.text .parameters_box div span{
+    margin-left: 6px;
+}
+.text .parameters_box div p{
+    margin-right: 20px;
+}
+
+
+/*titulo de los parametros*/
+.text .parameters_box .title{
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+
+/*serial com container:*/
+
+
+.text .serial_box{
+    height: 100vh;
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.text .serial_box header{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+
+    height: 7%;
+    width: 100%;
+}
+/*Serial com title*/
+.text .serial_box header .title{
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/*box to change the port*/
+
+.text .serial_box header .com_list{
+    height: 70%;
+    width: 40px;
+    padding: auto; 
+    margin-left: 10px;
+    margin-top: 5px;
+    
+    
+    border-style: solid;
+    border-radius: 6px;
+    border-color: transparent;
+
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+
+    /* Remove default system-level styling (important for custom appearance) */
+    appearance: none;
+    -webkit-appearance: none; /* For WebKit browsers */
+    -moz-appearance: none;    /* For Firefox */
+}
+.text .serial_box header .com_list:focus{
+    outline: none;
+    border-color:var(--primary-color);
+}
+.text .serial_box header .com_list option{
+    padding: 10px;
+}
+
+
+
+
+
+.text .serial_box .log_box{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: var(--primary-color-light);
+    border-radius: 6px;
+
+    margin-top: 50px;
+
+    width: 100%;
+    height: 80%;
+
+
+}
+
+.text .serial_box .log_box .logContent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+    
+}
+
+.text .serial_box .log_box .logContent .message{
+    display: flex;
+    justify-content: left;
+    align-items: start;
+
+    width: 90%;
+    height: 50px;
+    margin-top: 15px;
+    
+    border-radius: 6px;
+    background: var(--toggle-color);
+
+    
+}
+
+.text .serial_box .log_box .logContent .message span{
+    color: var(--text-color);
+    font-weight: 500;
+    margin: auto 10px;
+}
+
+
+
+
+
+.text .serial_box .log_box .stop-start{
+    width: 90%;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--toggle-color);
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.text .serial_box .log_box .stop-start:hover{
+    background:var(--primary-color);
+    transition: var(--tran-04);
+}
+
+.stop-start a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: #18191A;
+}
+
+.stop-start a:hover{
+    color: var(--primary-color-light);
+    transition: var(--tran-04);
+}

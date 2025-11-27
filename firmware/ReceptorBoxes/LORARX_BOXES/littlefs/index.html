@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <title>Desafio ECO YPF</title>
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="logo2.jpg" alt="logo">
+                </span>
+
+                <div class="text header-text">
+                    <span class="school">E.E.S.T N ° 7(Quilmes)</span>
+                    <span class="challenge">Desafio Eco YPF</span>
+                </div>
+            </div>
+
+            <i class='bx  bx-arrow-right toggle'></i> 
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                        <i class="bx bx-search icon"></i>
+                        <input type="search" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-home-alt icon"></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>               
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-bar-chart-big icon"></i>
+                            <span class="text nav-text">Revenue</span>
+                        </a>               
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-bell icon"></i>
+                            <span class="text nav-text">Notifications</span>
+                        </a>               
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-pie-chart-alt icon"></i>
+                            <span class="text nav-text">Analytics</span>
+                        </a>               
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-heart icon"></i>
+                            <span class="text nav-text">Likes</span>
+                        </a>               
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-wallet icon"></i>
+                            <span class="text nav-text">Wallets</span>
+                        </a>               
+                    </li>
+
+                </ul>
+
+            </div>
+            
+
+            <div class="bottom-content">
+
+                <li class="">
+                        <a href="#">
+                            <i class="bx bx-arrow-out-up-square-half icon"></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>               
+                    </li>
+
+
+                    <li class="mode">
+                        <div class="moon-sun">
+                            <i class="bx bx-moon icon moon"></i>
+                            <i class="bx bx-sun icon sun"></i>
+
+                        </div>
+                        <span class="mode-text text">Dark Mode</span>
+                        <div class="toggle-switch">
+                            <span class="switch">
+
+                            </span>
+                        </div>
+                    </li>
+
+
+
+            </div>
+        </div>
+        
+    
+    </nav>
+
+
+
+
+
+    <section class="home">
+        <div class="text">
+            
+            <header>
+                <div class="logo-text">
+                    <span class="image">
+                    <img src="logo.png" alt="logo">
+                </span>
+                <h1 class="car_number">Auto N°55</h1>
+
+                </div>
+                
+
+            <div id="map"></div>
+            </header>
+            <div class="parameters_box">
+
+                <h2 class="title">Parametros</h2>
+                <div class=""><span>Tension </span> <p class="voltage_value">Value</p> </div>
+                <div class=""><span>Corriente </span> <p class="current_value">Value</p> </div>
+                <div class=""><span>Potencia </span> <p class="pot_value">Value</p> </div>
+                <div class=""><span>Velocidad </span> <p class="speed_value">Value</p> </div>
+                <div class=""><span>Carga </span> <p class="charge_value">Value</p> </div>
+                <div class=""><span>Lora </span> <p class="lora_value">Value</p> </div>
+                <div class=""><span>GPS </span> <p class="gps_value">Value</p> </div>
+                
+            </div>
+            <div class="serial_box">
+                <header>
+                    <label class="title">Serial COM</label>
+                    <select class="com_list">
+                        <option value="COM1">1</option>
+                        <option value="COM2">2</option>
+                        <option value="COM3">3</option>
+
+                    </select>
+                </header>
+                
+                <div class="log_box">
+                    
+                    <div class="logContent">
+                        
+                        <div class="message">
+                            <span>data</span>
+                        </div>
+                        <div class="message">
+                            <span>data</span>
+                        </div>
+                    
+                    </div>
+                    
+                    <div class="stop-start">
+                        <a href="#">
+                            <span>START</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <script src="toggle.js"></script>
+    <script src="map.js"></script>
+    <script src="update.js"></script>
+    
+
+    
+</body>
+</html>
