@@ -6,4 +6,4 @@
 
 # Para acceder a esta se debe primero conectar al Access Point generado por el esp32 con las credenciales cargadas y entrar por un navegador a la direccion IP del esp32 por el puerto 80.
 
-![Muestra de la pagina web](images/TelemetryWebPage.png)
+![Muestra de la pagina web](https://github.com/heyboiiiii/DesafioEcoYPF-78-_2025/apps/images/TelemetryWebPage.png)
